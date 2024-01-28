@@ -1,13 +1,15 @@
 import telebot
+import json
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton, Message
 from data_users import load_data, save_data
-from locations import location_data
 
 token = '6457885818:AAHVcYEAP10xizU2FAHaVRNcub1ViPwjrq0'
 bot = telebot.TeleBot(token)
 
 data = "users.json"
 user_data = load_data(data)
+
+location_data = load_data("locations.json")
 
 
 def make_keyboard(options):
@@ -51,7 +53,8 @@ def send_location(chat_id, location):
 
     if "final" in cur_location:
         with open(picture_patch, "rb") as photo:
-            bot.send_photo(chat_id, photo, caption=description)
+            bot.send_photo(chat_id, photo, caption=description, reply_markup=None)
+        bot.send_message(chat_id, cur_location["final"], reply_markup=make_keyboard({"/start": {}}))
     else:
         with open(picture_patch, "rb") as photo:
             bot.send_photo(chat_id, photo, caption=description, reply_markup=make_keyboard(options))
