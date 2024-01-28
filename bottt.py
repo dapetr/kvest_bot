@@ -22,7 +22,10 @@ def make_keyboard(options):
 def start_message(message):
     global user_data
     user_id = message.chat.id
-    bot.send_message(user_id, "Привет!")
+    bot.send_message(user_id, "Рекомендую включить эту песню для особой атмосферы)")
+    audio = open(r'Bernth_-_Farewell.mp3', 'rb')
+    bot.send_audio(message.chat.id, audio)
+    audio.close()
 
     if user_id in user_data:
         user_data[user_id]["location"] = "start"
