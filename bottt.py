@@ -1,5 +1,4 @@
 import telebot
-import json
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton, Message
 from data_users import load_data, save_data
 
