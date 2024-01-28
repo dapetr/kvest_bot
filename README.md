@@ -13,7 +13,7 @@
 
 ## Инструкции по использованию
 
-- Найди бота в Telegram: @dungeon_mysteries_example_bot.
+- Найди бота в Telegram: [@waterworld_game_bot](https://t.me/waterworld_game_bot).
 - Запусти бота командой /start.
 
 В проекте использовались [изображения](https://disk.yandex.ru/d/Y43m0tu81qP3YA), сгенерированные нейросетью Leonardo.Ai

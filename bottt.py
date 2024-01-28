@@ -2,7 +2,7 @@ import telebot
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton, Message
 from data_users import load_data, save_data
 
-token = '6457885818:AAHVcYEAP10xizU2FAHaVRNcub1ViPwjrq0'
+token = '6562798394:AAGf0PZVUM_lha_MNuo0LHiWyTdR_2a8DHs'
 bot = telebot.TeleBot(token)
 
 data = "users.json"
