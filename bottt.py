@@ -48,8 +48,6 @@ def send_location(chat_id, location):
     picture_patch = cur_location["picture"]
     description = cur_location["description"]
 
-    print(f"Sending location: {location}")
-
     if "final" in cur_location:
         with open(picture_patch, "rb") as photo:
             bot.send_photo(chat_id, photo, caption=description, reply_markup=None)
@@ -62,7 +60,6 @@ def send_location(chat_id, location):
 @bot.message_handler(func=lambda m: True, content_types=['text'])
 def handle_text_answer(message: Message):
     user_id = message.chat.id
-    print(message.text)
     handle_answer(user_id, message.text)
 
 
@@ -75,7 +72,6 @@ def handle_answer(user_id, user_input):
     if user_input in options:
         next_location = options[user_input]
         user_data[user_id]["location"] = next_location
-        print(f"New location set to: {next_location}")
         save_data(user_data, data)
         send_location(user_id, next_location)
 
